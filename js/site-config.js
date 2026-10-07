@@ -103,15 +103,16 @@ export const SITE_CONFIG = {
   ],
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  // 4. PRODUCTS CATALOG (GHEE ONLY — STRICT DYNAMIC VARIANT PRICING)
+  // 4. PRODUCTS CATALOG (4 A2 GHEE CATEGORIES — EXACT PRICING RULES)
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   products: [
     {
-      id: "traditional-cow-ghee",
-      name: "Gokula Amudham Traditional Ghee",
-      tagline: "Slowly clarified golden cow ghee with authentic granular texture",
-      defaultBadge: "Customer Favorite",
-      shortDescription: "Prepared by slowly clarifying wholesome cow milk butter sourced directly from grassroots rural dairy farmers. Celebrated for its deep golden hue, traditional granular ('manal manal') mouthfeel, and rich sacred aroma that brings comforting warmth to every South Indian meal.",
+      id: "a2-cow-ghee",
+      name: "A2 Cow Ghee",
+      tagline: "Slowly clarified golden A2 cow ghee with authentic granular texture",
+      defaultBadge: "10% OFF",
+      shortDescription: "Prepared by slowly clarifying wholesome cow milk butter sourced directly from grassroots rural dairy farmers. Celebrated for its deep golden hue, traditional granular ('manal manal') mouthfeel, and rich sacred aroma that brings comforting warmth to everyday South Indian meals. Ghee is an energy-dense milk fat naturally containing fat-soluble vitamins A, D, E, and K.",
+      description: "Prepared by slowly clarifying wholesome cow milk butter sourced directly from grassroots rural dairy farmers. Celebrated for its deep golden hue, traditional granular ('manal manal') mouthfeel, and rich sacred aroma that brings comforting warmth to everyday South Indian meals. Ghee is an energy-dense milk fat naturally containing fat-soluble vitamins A, D, E, and K.",
       primaryImage: "assets/images/gokula-product-hero.jpg",
       gallery: [
         "assets/images/gokula-product-hero.jpg",
@@ -122,58 +123,229 @@ export const SITE_CONFIG = {
       features: [
         "Signature granular ('manal manalaana') mouthfeel",
         "Slowly clarified over controlled open flame from churned butter",
-        "Wholesome cow dairy base sourced directly from farmers",
-        "Food-grade sealed packaging preserving fresh aroma",
-        "Units strictly in ml & L: 200 ml, 500 ml, 1 L, 2 L"
+        "Wholesome A2 cow dairy base sourced directly from farmers",
+        "Dietary milk fat rich in fat-soluble vitamins A, D, E & K",
+        "Available in 250 ml, 500 ml, and 1 L sealed glass jars"
       ],
       variants: [
         {
-          id: "ghee-200ml",
-          size: "200 ml",
+          id: "a2-cow-ghee-250ml",
+          size: "250 ml",
           unit: "ml",
-          mrp: 140,
-          price: 140, // Standard MRP, NO DISCOUNT
-          discountEligible: false,
-          discountPercentage: 0,
-          savings: 0,
+          mrp: 189,
+          price: 170, // 10% OFF
+          discountEligible: true,
+          discountPercentage: 10,
+          savings: 19,
           label: "Trial Pack",
           isDefault: false
         },
         {
-          id: "ghee-500ml",
+          id: "a2-cow-ghee-500ml",
           size: "500 ml",
           unit: "ml",
-          mrp: 350,
-          price: 315, // 10% OFF
+          mrp: 378,
+          price: 340, // 10% OFF
           discountEligible: true,
           discountPercentage: 10,
-          savings: 35,
+          savings: 38,
           label: "Most Popular",
           isDefault: true,
           popular: true
         },
         {
-          id: "ghee-1L",
+          id: "a2-cow-ghee-1L",
           size: "1 L",
           unit: "L",
-          mrp: 700,
-          price: 630, // 10% OFF
+          mrp: 756,
+          price: 680, // 10% OFF
           discountEligible: true,
           discountPercentage: 10,
-          savings: 70,
+          savings: 76,
           label: "Best Family Value",
+          isDefault: false
+        }
+      ]
+    },
+    {
+      id: "a2-kaaram-cow-ghee",
+      name: "A2 Kaaram Cow Ghee",
+      tagline: "Rare traditional ghee from indigenous Kaaram Pasu (காராம் பசு)",
+      defaultBadge: "Heritage Pure",
+      shortDescription: "Crafted through age-old preparation methods from the milk of indigenous Kaaram cows (காராம் பசு)—an authentic dark South Indian cattle breed historically treasured in traditional households. Characterized by a distinctive, deeply comforting aroma, complex nutty flavor, and premium granular texture. Ghee is an energy-dense dietary milk fat with natural fat-soluble vitamins.",
+      description: "Crafted through age-old preparation methods from the milk of indigenous Kaaram cows (காராம் பசு)—an authentic dark South Indian cattle breed historically treasured in traditional households. Characterized by a distinctive, deeply comforting aroma, complex nutty flavor, and premium granular texture. Ideally suited for classic South Indian delicacies and traditional culinary preparations. Ghee is an energy-dense dietary milk fat with naturally occurring fat-soluble vitamins A, D, E, and K.",
+      primaryImage: "assets/images/product-kaaram-cow-ghee.jpg",
+      gallery: [
+        "assets/images/product-kaaram-cow-ghee.jpg",
+        "assets/images/cow-kaaram-pasu.jpg",
+        "assets/images/making-ghee-simmering.jpg",
+        "assets/images/gokula-product-range.jpg"
+      ],
+      features: [
+        "Sourced from native Kaaram cows (காராம் பசு)",
+        "Distinctive deep aroma & rich authentic nutty flavor",
+        "Traditional small-batch slow clarification in uruli",
+        "Energy-dense pure milk fat with natural vitamins A, D, E & K",
+        "Fixed honest pricing — strictly no artificial discount"
+      ],
+      variants: [
+        {
+          id: "a2-kaaram-ghee-250ml",
+          size: "250 ml",
+          unit: "ml",
+          mrp: 550,
+          price: 550, // NO DISCOUNT
+          discountEligible: false,
+          discountPercentage: 0,
+          savings: 0,
+          label: "Standard Pack",
           isDefault: false
         },
         {
-          id: "ghee-2L",
-          size: "2 L",
+          id: "a2-kaaram-ghee-500ml",
+          size: "500 ml",
+          unit: "ml",
+          mrp: 1100,
+          price: 1100, // NO DISCOUNT
+          discountEligible: false,
+          discountPercentage: 0,
+          savings: 0,
+          label: "Most Popular",
+          isDefault: true,
+          popular: true
+        },
+        {
+          id: "a2-kaaram-ghee-1L",
+          size: "1 L",
           unit: "L",
-          mrp: 1400,
-          price: 1260, // 10% OFF
+          mrp: 2200,
+          price: 2200, // NO DISCOUNT
+          discountEligible: false,
+          discountPercentage: 0,
+          savings: 0,
+          label: "Grand Jar",
+          isDefault: false
+        }
+      ]
+    },
+    {
+      id: "a2-country-cow-ghee",
+      name: "A2 Country Cow Ghee",
+      tagline: "Nattu Pasu / Country Cow Ghee (நாட்டு பசு மாடு) from Tamil Nadu native breeds",
+      defaultBadge: "5% OFF",
+      shortDescription: "Rooted in time-honored Tamil Nadu pastoral dairy traditions, made exclusively from the milk of native Country Cows (நாட்டு பசு மாடு / Nattu Pasu breeds such as Kangayam). The curd is hand-churned into country butter and clarified slowly over gentle heat to yield an alluring aroma and golden granular grain. Ghee is an energy-dense milk fat naturally carrying vitamins A, D, E, and K.",
+      description: "Rooted in time-honored Tamil Nadu pastoral dairy traditions, this ghee is made exclusively from the milk of native Country Cows (நாட்டு பசு மாடு / Nattu Pasu breeds such as Kangayam). The curd is churned into country butter and clarified slowly over gentle flame to yield an alluring aroma and golden granular consistency. As an energy-dense milk fat, country cow ghee naturally carries fat-soluble vitamins A, D, E, and K, making it a cornerstone of traditional South Indian cooking and culinary heritage.",
+      primaryImage: "assets/images/product-country-cow-ghee.jpg",
+      gallery: [
+        "assets/images/product-country-cow-ghee.jpg",
+        "assets/images/cow-nattu-pasu.jpg",
+        "assets/images/making-ghee-simmering.jpg",
+        "assets/images/gokula-product-range.jpg"
+      ],
+      features: [
+        "100% Native Country Cow (நாட்டு பசு மாடு / Nattu Pasu) milk",
+        "Traditional curd churning & gentle firewood clarification",
+        "Pronounced earthy aroma & rich golden granular grain",
+        "Energy-dense essential dietary milk fat with vitamins A, D & E",
+        "Available in 250 ml, 500 ml, and 1 L sealed glass jars"
+      ],
+      variants: [
+        {
+          id: "a2-country-ghee-250ml",
+          size: "250 ml",
+          unit: "ml",
+          mrp: 316,
+          price: 300, // 5% OFF
           discountEligible: true,
-          discountPercentage: 10,
-          savings: 140,
-          label: "Max Savings",
+          discountPercentage: 5,
+          savings: 16,
+          label: "Trial Pack",
+          isDefault: false
+        },
+        {
+          id: "a2-country-ghee-500ml",
+          size: "500 ml",
+          unit: "ml",
+          mrp: 632,
+          price: 600, // 5% OFF
+          discountEligible: true,
+          discountPercentage: 5,
+          savings: 32,
+          label: "Most Popular",
+          isDefault: true,
+          popular: true
+        },
+        {
+          id: "a2-country-ghee-1L",
+          size: "1 L",
+          unit: "L",
+          mrp: 1264,
+          price: 1200, // 5% OFF
+          discountEligible: true,
+          discountPercentage: 5,
+          savings: 64,
+          label: "Family Pack",
+          isDefault: false
+        }
+      ]
+    },
+    {
+      id: "a2-ayyappa-pooja-ghee",
+      name: "A2 Pure Ghee for Ayyappa Pooja",
+      tagline: "Specially prepared for sacred Ayyappa Pooja & Kovil devotional rituals",
+      defaultBadge: "5% OFF",
+      shortDescription: "Specially prepared with utmost sanctity for devotional rituals, Ayyappa Swamy pooja, Neyyabhishekam, temple vilakku (lamps), and sacred offerings. Made from wholesome cow milk following clean, disciplined dairy practices to ensure pristine clarity, divine aroma, and traditional ritual suitability. Packaged in clean, sealed food-grade jars to maintain ritual purity.",
+      description: "Specially prepared with utmost sanctity for devotional rituals, Ayyappa Swamy pooja, Neyyabhishekam, temple vilakku (lamps), and sacred offerings. Made from wholesome cow milk following clean, disciplined dairy practices to ensure pristine clarity, divine aroma, and traditional ritual suitability. Presented in clean, food-grade sealed jars to preserve ritual purity from our hands to your altar.",
+      primaryImage: "assets/images/product-ayyappa-pooja-ghee.jpg",
+      gallery: [
+        "assets/images/product-ayyappa-pooja-ghee.jpg",
+        "assets/images/gokula-product-hero.jpg",
+        "assets/images/making-ghee-simmering.jpg",
+        "assets/images/gokula-product-range.jpg"
+      ],
+      features: [
+        "Specially crafted for Ayyappa Pooja & Kovil devotional rituals",
+        "Prepared under disciplined conditions of traditional sanctity",
+        "Pristine golden clarity and serene, soothing sacred aroma",
+        "Ideal for Neyyabhishekam, pooja vilakku, and prasad offerings",
+        "Sealed securely in 250 ml, 500 ml, and 1 L ritual packs"
+      ],
+      variants: [
+        {
+          id: "a2-ayyappa-ghee-250ml",
+          size: "250 ml",
+          unit: "ml",
+          mrp: 211,
+          price: 200, // 5% OFF
+          discountEligible: true,
+          discountPercentage: 5,
+          savings: 11,
+          label: "Ritual Pack",
+          isDefault: false
+        },
+        {
+          id: "a2-ayyappa-ghee-500ml",
+          size: "500 ml",
+          unit: "ml",
+          mrp: 421,
+          price: 400, // 5% OFF
+          discountEligible: true,
+          discountPercentage: 5,
+          savings: 21,
+          label: "Most Popular",
+          isDefault: true,
+          popular: true
+        },
+        {
+          id: "a2-ayyappa-ghee-1L",
+          size: "1 L",
+          unit: "L",
+          mrp: 842,
+          price: 800, // 5% OFF
+          discountEligible: true,
+          discountPercentage: 5,
+          savings: 42,
+          label: "Temple Offering Pack",
           isDefault: false
         }
       ]

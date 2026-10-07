@@ -176,8 +176,8 @@ class App {
             <div class="product-variants-wrapper">
               <div class="variant-label-row">
                 <label class="variant-label">Select Pack Size:</label>
-                <span class="variant-offer-hint ${defaultVariant.discountEligible ? 'discount-active' : 'standard-mrp'}" id="variant-hint-${product.id}">
-                  ${defaultVariant.discountEligible ? '⚡ 10% OFF on this size' : 'Standard MRP Pack'}
+                <span class="variant-offer-hint ${defaultVariant.discountEligible && defaultVariant.discountPercentage > 0 ? 'discount-active' : 'standard-mrp'}" id="variant-hint-${product.id}">
+                  ${defaultVariant.discountEligible && defaultVariant.discountPercentage > 0 ? `⚡ ${defaultVariant.discountPercentage}% OFF on this size` : 'Standard Price Pack'}
                 </span>
               </div>
               <div class="variant-chips-group" role="radiogroup" aria-label="${product.name} pack size options">
@@ -248,28 +248,25 @@ class App {
   }
 
   renderCardBadge(variant, product) {
-    if (variant.discountEligible) {
+    if (variant.discountEligible && variant.discountPercentage > 0) {
       return `
         <span class="product-pill">${product.defaultBadge}</span>
-        <span class="product-offer-tag">10% OFF APPLIED</span>
+        <span class="product-offer-tag">${variant.discountPercentage}% OFF APPLIED</span>
       `;
     }
     return `
       <span class="product-pill">${product.defaultBadge}</span>
-      <span class="product-trial-tag">TRIAL PACK (MRP)</span>
+      <span class="product-trial-tag">PURE & NATURAL</span>
     `;
   }
 
   renderPriceBox(variant, currency) {
-    if (variant.discountEligible) {
-      // 500ml, 1L, 2L Ghee:
-      // Price: ~~₹350~~ 10% OFF
-      // ₹315  You Save ₹35
+    if (variant.discountEligible && variant.discountPercentage > 0) {
       return `
         <div class="price-strikethrough-row">
           <span class="price-prefix">Price:</span>
           <del class="product-base-price">${currency}${variant.mrp}</del>
-          <span class="discount-pill-small">10% OFF</span>
+          <span class="discount-pill-small">${variant.discountPercentage}% OFF</span>
         </div>
         <div class="price-current-row">
           <span class="product-current-price">${currency}${variant.price}</span>
@@ -278,8 +275,6 @@ class App {
       `;
     }
 
-    // 200 ml Ghee:
-    // Normal MRP ONLY. NO crossed-out price, NO 10% OFF badge, NO savings.
     return `
       <div class="price-strikethrough-row normal-mrp">
         <span class="price-prefix">Price:</span>
@@ -324,8 +319,10 @@ class App {
         // Update offer indicator
         const hintEl = document.getElementById(`variant-hint-${productId}`);
         if (hintEl) {
-          hintEl.textContent = variant.discountEligible ? '⚡ 10% OFF on this size' : 'Standard MRP Pack';
-          hintEl.className = variant.discountEligible 
+          hintEl.textContent = (variant.discountEligible && variant.discountPercentage > 0)
+            ? `⚡ ${variant.discountPercentage}% OFF on this size` 
+            : 'Standard Price Pack';
+          hintEl.className = (variant.discountEligible && variant.discountPercentage > 0)
             ? 'variant-offer-hint discount-active' 
             : 'variant-offer-hint standard-mrp';
         }
